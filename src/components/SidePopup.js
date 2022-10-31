@@ -62,7 +62,7 @@ function SidePopup(props) {
         "https://webhook.site/66c544d6-a11d-4509-a1d3-2122769da1ca",
         JSON.stringify(obj)
       )
-      .then((e) => console.log(e))
+      .then((e) => alert(`Data Posted Successfully ${e}`))
       .catch((err) => console.log(err));
 
     setDropDown([]);
