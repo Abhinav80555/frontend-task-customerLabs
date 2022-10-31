@@ -5,9 +5,12 @@ import axios from "axios";
 import RemoveIcon from "@mui/icons-material/Remove";
 import IconButton from "@mui/joy/IconButton";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AddingData, DropDownData } from "./Data";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
+
+toast.configure();
 function SidePopup(props) {
   const [dropDown, setDropDown] = useState([]);
   const [input, setInput] = useState("");
@@ -62,8 +65,10 @@ function SidePopup(props) {
         "https://webhook.site/66c544d6-a11d-4509-a1d3-2122769da1ca",
         JSON.stringify(obj)
       )
-      .then((e) =>alert(`Data Posted Successfully`))
+      .then((e) =>console.log(e))
       .catch((err) => console.log(err));
+
+      alert("data posted successfully")
 
     setDropDown([]);
     setDefaultDropdown(DropDownData);
@@ -137,6 +142,7 @@ function SidePopup(props) {
               let List = innerList(Object.keys(e));
               return (
                 <span
+                key={i}
                   style={{
                     display: "flex",
                     flexDirection: "row",
@@ -151,7 +157,7 @@ function SidePopup(props) {
                     ))}
                   </select>
                   <IconButton variant="soft" onClick={() => removefn(e, i)}>
-                    <RemoveIcon key={"arr" + i} id={Object.keys(e)[0]} />
+                    <RemoveIcon />
                   </IconButton>
                 </span>
               );

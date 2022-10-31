@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SidePopup from "./components/SidePopup";
 
